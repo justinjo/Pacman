@@ -5,6 +5,7 @@
 #define BOULDER_H_INCLUDED
 
 #include "constants.h"
+#include "termfuncs.h"
 
 class Boulder {
         public:

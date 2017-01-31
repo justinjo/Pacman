@@ -11,13 +11,15 @@ using namespace std;
 #include "dot.h"
 #include "termfuncs.h"
 
-
 /* Constructor */
 Game::Game()
 {
         level = 1;
         level_over = false;
         game_won = false;
+
+/*        pubnub::context pn("pub-c-211da9ce-adcf-44ab-b2d1-fc1c0a8eaadc", 
+                        "sub-c-22d37992-dea5-11e6-b2ae-0619f8945a4f");        */
 }
 
 // print_manual
@@ -70,9 +72,11 @@ void Game::run()
 // Returns:     None
 void Game::clear_board()
 {
-        for (int r=0; r<ROWS; r++)
-                for (int c=0; c<COLS; c++)
+        for (int r=0; r<ROWS; r++){
+                for (int c=0; c<COLS; c++){
                         board[r][c] = SPACE;
+                }
+        }
 }
 
 // print_board

@@ -2,12 +2,11 @@
  * Boulder Class Implementation                                                *
  ******************************************************************************/
 
-#include <iostream>
-using namespace std;
 
-#include "termfuncs.h"
-#include "constants.h"
+
+#include <iostream>
 #include "boulder.h"
+using namespace std;
 
 /* Constructor */
 Boulder::Boulder()
@@ -22,10 +21,11 @@ Boulder::Boulder()
         } while ( overlaps_middle() );
 }
 
-// place_on_board
-// Purpose:     Places the boulder onto the 2D board
-// Arguments:   2D board (char[][])
-// Returns:     None
+/* place_on_board
+ * Purpose:     Places the boulder onto the 2D board
+ * Arguments:   2D board (char[][])
+ * Returns:     None
+ */
 void Boulder::place_on_board(char board[ROWS][COLS])
 {
         for (int r = top_left_r; r <= top_left_r + height; r++) {
@@ -37,10 +37,11 @@ void Boulder::place_on_board(char board[ROWS][COLS])
         }
 }
 
-// overlaps_middle
-// Purpose:     Determines if current boulder overlaps middle position on board
-// Arguments:   None
-// Returns:     True if boulder overlaps the middle position, false otherwise
+/* overlaps_middle
+ * Purpose:     Determines if current boulder overlaps middle position on board
+ * Arguments:   None
+ * Returns:     True if boulder overlaps the middle position, false otherwise
+ */
 bool Boulder::overlaps_middle()
 {
         bool center_row = (ROWS / 2) >= top_left_r &&
